@@ -1,0 +1,45 @@
+buildscript {
+ext {
+springBootVersion = '1.5.6.RELEASE'
+}
+repositories {
+mavenCentral()
+}
+dependencies {
+classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+mavenCentral()
+}
+
+
+dependencies {
+compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+//compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+compile('org.springframework.boot:spring-boot-starter-web')
+
+compile('javax.servlet:jstl')
+    compile('org.apache.tomcat.embed:tomcat-embed-jasper')
+
+compile("org.springframework.boot:spring-boot-devtools")
+    
+testCompile('org.springframework.boot:spring-boot-starter-test')
+
+testCompile group: 'org.mockito', name: 'mockito-all', version: '2.0.2-beta'
+testCompile group: 'junit', name: 'junit', version: '4.11'
+testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.2.1'
+testCompile group: 'org.jacoco', name: 'org.jacoco.agent', version: '0.7.6.201602180812'
+compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.7'
+
+
+
+}
