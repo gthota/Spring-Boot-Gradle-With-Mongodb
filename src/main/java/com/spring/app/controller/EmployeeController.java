@@ -245,7 +245,6 @@ public class EmployeeController {
 
 		Map<String, Object> model = new HashMap<String, Object>();
 
-		System.out.println("Hai");
 		try {
 
 			if (employeeId.trim().equals("")) {
